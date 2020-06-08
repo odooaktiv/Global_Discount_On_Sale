@@ -1,0 +1,21 @@
+<odoo>
+    <data>
+        <record id="view_inherit_order_form" model="ir.ui.view">
+            <field name="name">sale.order.tree</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='payment_term_id']" position="after">
+                    <field name="show_discount" invisible="1"/>
+                    <field name="global_discount" 
+                        attrs="{'readonly': [('show_discount', '=', False)]}"/>
+                </xpath>
+                 <xpath expr="//field[@name='amount_untaxed']" position="before">
+                    <field name="discount_amount"
+                           readonly="1" />
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

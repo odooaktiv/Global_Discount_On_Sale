@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_invoice_document_inherit_discount"
+              inherit_id="account.report_invoice_document">
+        <xpath expr="//div[@id='total']/div/table/tr[@class='border-black o_subtotal']"
+               position="before">
+            <tr class="border-black" style="">
+                <td>
+                    <strong>Discount</strong>
+                </td>
+                <td class="text-right">
+                    <span t-field="o.discount_amount"/>
+                </td>
+            </tr>
+        </xpath>
+    </template>
+</odoo>

@@ -1,1 +1,0 @@
-# Global_Discount_On_Sale
